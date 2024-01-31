@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Envíanos tu consulta | Contacto Toyota Perú</title>
+    <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <script src="assets/js/frmPedidos.js"></script>
+    <link rel="stylesheet" href="assets/css/estilos.css" />
+</head>
+
+<body>
+
+    <header class="Cabecera">
+        <h3>Lista de Pedidos</h3>
+    </header>
+
+    <main>
+
+        <div>
+
+            <div class="table-responsive">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th colspan="2">
+                                <h1> datos de producto </h1>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <label>Nombre:</label>
+                                <input type="text" name="nombres" id="nombres" placeholder="NOMBRES" required>
+                            </td>
+                            <td>
+                                <label>Precio:</label>
+                                <input type="text" name="precio" id="precio" placeholder="PRECIO UNITARIO"
+                                    onkeypress="return event.charCode>=48 && event.charCode<=57" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Cantidad:</label>
+                                <input type="text" name="cantidad" id="cantidad" placeholder="CANTIDAD"
+                                    onpaste="return false;" maxlength="8"
+                                    onkeypress="return event.charCode>=48 && event.charCode<=57" required>
+                            </td>
+                            <td>
+                                <label>Imagen:</label>
+                                <input type="file" id="img" name="img" accept="image/png, image/jpeg" required />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+
+                            </td>
+                            <td>
+                                <button name="agregar" id="agregar" onclick="agregar()">AGREGAR</button>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+
+        <form action="frmRecepcionar.html" name="frmPedidos" id="frmPedidos" method="post" onsubmit="return enviarPedido(this);">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table id="tblProductos" name="tblProductos">
+                        <thead>
+                            <tr>
+                                <th> # </th>
+                                <th>Nombre de Producto</th>
+                                <th>Precio unitario</th>
+                                <th>Cantidad</th>
+                                <th>Sub Total</th>
+                                <th>Imagen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4"> Totales</td>
+                                <td id="totalTbl" class="PrecioTotal"> S/. 0.00 </td>
+                                <td colspan="2"> </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div class="Cabecera">
+                    <button type="submit" name="enviar" id="enviar">
+                        ENVIAR
+                    </button>
+                </div>
+                
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <h2>formulario de Pedidos</h2>
+    </footer>
+
+</body>
+
+</html>
